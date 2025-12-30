@@ -140,7 +140,7 @@
         }
 
         .para p {
-            font-size: 15px;
+            font-size: 14px;
             color: #A2A2A2;
             line-height: 2em;
 
@@ -202,7 +202,7 @@
         }
 
         /* ----------------------------------------------------------- */
- /* ===== LIGHTBOX ===== */
+ /* light box */
 .lightbox{
   position: fixed;
   inset: 0;
@@ -250,7 +250,6 @@
   color: white;
   cursor: pointer;
 
-
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -296,10 +295,6 @@
 }
 
 
-@media(max-width:600px){
-  .lb-prev, .lb-next{ display:none; }
-  #lightbox-img{ max-width:95vw; max-height:70vh; }
-}
 
 
 

@@ -66,9 +66,8 @@ const counter = document.getElementById("counter");
 const totalminits = document.getElementById("totalminits");
 const low = document.getElementById("low");
 
-const FIXED_DURATION = 171; // 02:51 (171 seconds)
+const duration = 171; // 02:51 
 
-// format seconds to MM:SS
 function formatTime(seconds){
     seconds = Math.floor(seconds);
     let min = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -76,25 +75,22 @@ function formatTime(seconds){
     return `${min}:${sec}`;
 }
 
-// set fixed total duration
-audio.addEventListener("loadedmetadata", () => {
-    totalminits.textContent = formatTime(FIXED_DURATION);
-});
+
 
 // update counter & progress
 audio.addEventListener("timeupdate", () => {
 
-    let current = Math.min(audio.currentTime, FIXED_DURATION);
+    let current = Math.min(audio.currentTime, duration);
 
     counter.textContent = formatTime(current);
 
-    let progress = (current / FIXED_DURATION) * 100;
+    let progress = (current / duration) * 100;
     low.style.width = progress + "%";
 
-    // stop audio at 02:51
-    if (audio.currentTime >= FIXED_DURATION) {
+    // stop audio
+    if (audio.currentTime >= duration) {
         audio.pause();
-        audio.currentTime = FIXED_DURATION;
+        audio.currentTime = duration;
         playBtn.classList.replace("fa-pause", "fa-play");
     }
 });
