@@ -57,8 +57,9 @@ prev.addEventListener("click", () => {
   sliderTrack.style.transform = `translateX(-${index * 100}%)`;
 });
 
+ 
+// Audio
 
-// play
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("playBtn");
 const volumeBtn = document.getElementById("volumeBtn");
@@ -116,7 +117,6 @@ volumeBtn.addEventListener("click", () => {
         volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
     }
 });
-
 // reset when ended (manual or natural)
 audio.addEventListener("ended", () => {
     playBtn.classList.replace("fa-pause", "fa-play");
